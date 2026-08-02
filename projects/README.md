@@ -27,7 +27,7 @@ The projects are organized from beginner to advanced, with each project introduc
 
 | No. | Project | Concepts | Status |
 |-----:|---------|----------|--------|
-| 01 | Simple Storage | Variables, Functions, Arrays, Structs, Events | ✅ |
+| 01 | Simple Storage | Variables, Functions, Arrays, Structs | ✅ |
 | 02 | Crowdfunding | Structs, Mappings, Deadlines, Payments | ⏳ |
 | 03 | ERC20 Token | ERC20, OpenZeppelin, Inheritance | ⏳ |
 | 04 | ERC721 NFT Collection | NFTs, Minting, Metadata | ⏳ |
