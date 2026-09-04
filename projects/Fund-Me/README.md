@@ -1,66 +1,159 @@
-## Foundry
+# FundMe — Foundry Smart Contract Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A beginner-friendly Ethereum crowdfunding smart contract built with **Solidity** and **Foundry**.
 
-Foundry consists of:
+The project allows users to fund the contract with ETH. The contract uses a **Chainlink Price Feed** to make sure the minimum contribution is worth at least **$5 USD**. Only the contract owner can withdraw the funds.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## 🚀 Features
 
-## Documentation
+* Users can fund the contract with ETH.
+* Minimum funding requirement of $5 USD.
+* Uses Chainlink Price Feeds for ETH/USD price conversion.
+* Tracks how much each address has funded.
+* Keeps track of funders.
+* Only the owner can withdraw funds.
+* Includes unit tests and integration tests.
+* Includes deployment and interaction scripts.
+* Supports local testing with Anvil.
+* Includes network-specific configuration and mocks.
 
-https://book.getfoundry.sh/
+## 🛠️ Tech Stack
 
-## Usage
+* **Solidity**
+* **Foundry**
 
-### Build
+  * Forge
+  * Anvil
+  * Cast
+* **Chainlink Price Feeds**
+* **Foundry DevOps**
 
-```shell
-$ forge build
+## 📁 Project Structure
+
+```text
+Fund-Me/
+├── src/
+│   ├── FundMe.sol
+│   └── PriceConverter.sol
+│
+├── script/
+│   ├── DeployFundMe.s.sol
+│   ├── HelperConfig.s.sol
+│   └── Interactions.s.sol
+│
+├── test/
+│   ├── Unit/
+│   │   └── FundMe.t.sol
+│   ├── Integration/
+│   │   └── FundMeIntegration.t.sol
+│   └── Mocks/
+│       └── MockV3aggregator.sol
+│
+├── foundry.toml
+├── Makefile
+└── README.md
 ```
 
-### Test
+## 🧪 Testing
 
-```shell
-$ forge test
+Run all tests:
+
+```bash
+forge test
 ```
 
-### Format
+Run a specific test:
 
-```shell
-$ forge fmt
+```bash
+forge test --mt testUserCanFundAndOwnerWithdraw -vv
 ```
 
-### Gas Snapshots
+Generate a gas report:
 
-```shell
-$ forge snapshot
+```bash
+forge test --gas-report
 ```
 
-### Anvil
+## ⛓️ Local Development
 
-```shell
-$ anvil
+Start a local Ethereum blockchain using Anvil:
+
+```bash
+anvil
 ```
 
-### Deploy
+Custom Anvil setup:
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```bash
+anvil -m "test test test test test test test test test test test junk" --steps-tracing --block-time 1
 ```
 
-### Cast
+> ⚠️ The mnemonic above is for local development only. Never use it with real funds.
 
-```shell
-$ cast <subcommand>
+## 🚢 Deployment
+
+The project includes deployment scripts using Foundry Script.
+
+Run the deployment script:
+
+```bash
+forge script script/DeployFundMe.s.sol
 ```
 
-### Help
+Deploy to a local Anvil blockchain:
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+forge script script/DeployFundMe.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
 ```
+
+## 💰 Interacting With the Contract
+
+The project contains interaction scripts for:
+
+* Funding the contract
+* Withdrawing funds
+
+The `foundry-devops` library is used to find the most recently deployed `FundMe` contract on the current chain.
+
+## 🧠 What I Learned
+
+Through this project, I learned and practiced:
+
+* Solidity smart contract development
+* Interfaces
+* Chainlink Price Feeds
+* Libraries and modifiers
+* `msg.sender` and `msg.value`
+* Contract ownership
+* ETH transfers
+* Unit testing with Foundry
+* Integration testing
+* Foundry cheatcodes
+* Mock contracts
+* Deployment scripts
+* Helper configuration
+* Anvil local blockchain
+* Gas testing
+* Foundry DevOps
+* Git and GitHub
+
+## 🔐 Security Notes
+
+This project is primarily a **learning project** and has not been professionally audited.
+
+Do not use it with real funds without a proper security review.
+
+Never commit:
+
+```text
+.env
+private keys
+wallet credentials
+API secrets
+```
+
+## 📚 Purpose
+
+This project was built as part of my journey learning **Solidity, Foundry, Ethereum smart contract development, and smart contract security**.
+
+It serves as a practical example of building, testing, deploying, and interacting with a Solidity smart contract.
