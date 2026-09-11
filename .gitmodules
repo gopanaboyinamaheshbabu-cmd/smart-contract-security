@@ -1,0 +1,3 @@
+[submodule "projects/Lottery/lib/chainlink-evm"]
+	path = projects/Lottery/lib/chainlink-evm
+	url = https://github.com/smartcontractkit/chainlink-evm
