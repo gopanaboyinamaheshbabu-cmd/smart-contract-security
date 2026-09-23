@@ -9,5 +9,22 @@ contract DeployRaffle is Script {
     function run() external {
         deployContract();
     }
-    function deployContract() internal returns (Raffle, HelperConfig) {}
+
+    function deployContract() public returns (Raffle, HelperConfig) {
+        HelperConfig helperConfig = new HelperConfig();
+        // local --> deploy mocks,get local config
+        // sepolia --> get sepolia config
+        HelperConfig.NetworkConfig memory config = helperConfig.getConfig();
+        vm.startBroadcast();
+        Raffle raffle = new Raffle(
+            config.entranceFee,
+            config.interval,
+            config.vrfCoordinator,
+            config.gasLane,
+            config.subscriptionID,
+            config.callbackGasLimit
+        );
+        vm.stopBroadcast();
+        return (raffle, helperConfig);
+    }
 }

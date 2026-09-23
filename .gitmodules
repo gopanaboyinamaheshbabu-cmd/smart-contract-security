@@ -1,3 +1,6 @@
 [submodule "projects/Lottery/lib/chainlink-evm"]
 	path = projects/Lottery/lib/chainlink-evm
 	url = https://github.com/smartcontractkit/chainlink-evm
+[submodule "projects/Lottery/lib/openzeppelin-contracts"]
+	path = projects/Lottery/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
