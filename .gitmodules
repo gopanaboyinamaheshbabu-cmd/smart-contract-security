@@ -1,9 +1,0 @@
-[submodule "projects/Lottery/lib/chainlink-evm"]
-	path = projects/Lottery/lib/chainlink-evm
-	url = https://github.com/smartcontractkit/chainlink-evm
-[submodule "projects/Lottery/lib/openzeppelin-contracts"]
-	path = projects/Lottery/lib/openzeppelin-contracts
-	url = https://github.com/OpenZeppelin/openzeppelin-contracts
-[submodule "projects/ERC-20/lib/forge-std"]
-	path = projects/ERC-20/lib/forge-std
-	url = https://github.com/foundry-rs/forge-std

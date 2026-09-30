@@ -3,7 +3,6 @@
 **/cache/
 
 # Foundry dependencies
-**/lib/
 
 # Secrets
 .env
@@ -13,4 +12,3 @@
 .DS_Store
 .vscode/
 .idea/
-projects/ERC-20/lib/
