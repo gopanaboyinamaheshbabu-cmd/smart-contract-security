@@ -1,0 +1,15 @@
+# Foundry build files
+**/out/
+**/cache/
+
+# Foundry dependencies
+**/lib/
+
+# Secrets
+.env
+.env.*
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
