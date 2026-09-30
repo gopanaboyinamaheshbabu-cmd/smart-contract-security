@@ -1,1 +1,1 @@
-# smart-contract-auditor-journey
+# Smart Contract Security
