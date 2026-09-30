@@ -20,4 +20,3 @@ docs/
 !.env.example
 
 # Foundry dependencies
-**/lib/
